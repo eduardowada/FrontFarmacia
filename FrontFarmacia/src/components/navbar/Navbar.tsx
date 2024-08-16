@@ -1,25 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Pill } from '@phosphor-icons/react'
 
 function Navbar() {
+
   return (
     <>
-      <div className='w-full bg-orange-700 text-white flex justify-center py-4'>
-        <div className="container flex justify-between text-lg">
-          <div className='flex items-center text-2xl font-bold uppercase'>
-            <Pill size={30} weight='bold' className='mr-2'/>
-            UltraFarma Generation
-          </div>
+     <div className='w-full bg-orange-700 text-white flex justify-center py-4'>
+          <div className="container flex justify-between text-lg">
+          <Link to='/home' className='text-2xl font-bold uppercase'>Farmatech</Link>
 
-          <div className='flex gap-4 mr-2'>
-              <Link to='/home' className='hover:underline'>Home</Link>
-              <div className='hover:underline'>Categorias</div>
-              <div className='hover:underline'>Produtos</div>
-              <div className='hover:underline'>Sair</div>
+            <div className='flex gap-4'>
+            <div className='hover:underline'>Produtos</div>
+            <Link to='/categorias' className='hover:underline'>Categorias</Link>
+              <Link to='cadastroCategoria' className='hover:underline'>Cadastrar categoria</Link>
             </div>
+          </div>
         </div>
-      </div>
     </>
   )
 }
